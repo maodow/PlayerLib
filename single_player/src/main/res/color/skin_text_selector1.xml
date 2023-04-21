@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--text 如果是在TvRecyclerview的时候就用这个-->
+    <item android:color="@color/skin_button_text_focus" android:state_selected="true" />
+    <item android:color="@color/skin_button_text_selecte" android:state_activated="true" />
+    <item android:color="@color/theme_text" />
+</selector>

@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'file://D://huan-chonggou//ui_master//repository'
+            //  url 'file://E://hw_chonggou//develop_master//repository'
+
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'file://D://huan-chonggou//ui_master//repository'
+            //  url 'file://E://hw_chonggou//develop_master//repository'
+
+        }
+    }
+}
+rootProject.name = "demoPlayer"
+include ':app'
+include ':single_player'

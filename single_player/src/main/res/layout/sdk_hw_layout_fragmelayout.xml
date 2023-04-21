@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frame_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/player_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
+        android:scaleType="fitEnd"
+        android:visibility="gone" />
+
+    <com.huan.player.ui.view.ControllerView
+        android:id="@+id/player_controller_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <com.huan.player.ui.view.VideoEpisodeChoiceView
+        android:id="@+id/player_video_episode_choice_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <com.huan.player.ui.view.BufferView
+        android:id="@+id/player_buffer_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible" />
+
+    <com.huan.player.ui.view.DetainmentView
+        android:id="@+id/player_detainment_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+
+    <ProgressBar
+        android:id="@+id/player_small_progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_gravity="bottom"
+        android:progressDrawable="@drawable/skin_seek_progress_bg" />
+
+
+    <ImageView
+        android:id="@+id/player_poster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black" />
+</FrameLayout>

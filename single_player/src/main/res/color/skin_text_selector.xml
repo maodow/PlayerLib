@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--如果是子View text 请添加android:duplicateParentState="true" 属性-->
+    <item android:color="@color/skin_button_text_selecte" android:state_selected="true" />
+    <item android:color="@color/skin_button_text_focus" android:state_focused="true" />
+    <item android:color="@color/theme_text" />
+</selector>

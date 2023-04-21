@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <TextView
+            android:id="@+id/buffer_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_3"
+            android:ellipsize="end"
+            android:gravity="bottom|center_horizontal"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/buffer_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/buffer_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:src="@mipmap/sdk_player_buffer_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/buffer_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_3"
+            android:gravity="center_horizontal"
+            android:text="按【上键】或【下键】选择集数"
+            android:textColor="@color/second_level_title"
+            android:textSize="@dimen/sp_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buffer_line" />
+
+        <TextView
+            android:id="@+id/buffer_downloading_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_3"
+            android:gravity="center_horizontal"
+            android:textColor="@color/second_level_title"
+            android:textSize="@dimen/sp_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buffer_hint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--缓冲视图-->
+    <LinearLayout
+        android:id="@+id/player_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/player_loading"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center"
+            android:src="@drawable/loading_animation" />
+
+        <TextView
+            android:id="@+id/buffer_downloading_speed2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_3"
+            android:gravity="center_horizontal"
+            android:textColor="@color/second_level_title" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<resources>
+    <!--对话框主题-->
+    <style name="AppThemeDialog" parent="Theme.AppCompat.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 除去背景色 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+
+    <!--全屏-->
+    <style name="AppThemeDialog2" parent="Theme.AppCompat.Dialog">
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 除去背景色 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <!--获焦textView-->
+    <declare-styleable name="FocusTextView">
+        <!--隐藏的类型GONE和 INVISIBLE-->
+        <attr name="disappearType" format="string" />
+        <!--获焦隐藏，还是失焦隐藏  focus 、 blur-->
+        <attr name="visibleType" format="string" />
+        <!--是否开启隐藏功能 true 隐藏 false 不隐藏-->
+        <attr name="isHide" format="boolean" />
+    </declare-styleable>
+
+</resources>

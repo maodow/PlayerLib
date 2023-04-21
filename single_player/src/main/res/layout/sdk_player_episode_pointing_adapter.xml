@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="PlayerEpisodePointingBinding">
+        <variable
+            name="content"
+            type="java.lang.String" />
+    </data>
+
+    <com.huan.player.ui.FocusTextView
+        android:id="@+id/episode_pointing_content"
+        android:focusable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:minWidth="@dimen/dp_50"
+        android:background="@drawable/skin_btn3"
+        android:lines="1"
+        android:gravity="center"
+        android:text="@{content}"
+        android:paddingStart="@dimen/dp_4"
+        android:paddingEnd="@dimen/dp_4"
+        android:textColor="@color/skin_text_selector1"
+        android:textSize="@dimen/sp_14"/>
+</layout>

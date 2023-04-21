@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="potato_color">#FF7103</color>
+    <color name="deep_white">#2CD8D8D8</color> <!--深白色-->
+
+
+    <color name="text_bg">#4D292A2F</color>  <!--透明灰色背景-->
+
+
+    <color name="sdk_title_name_color">#FFFFFF</color>
+    <color name="sdk_skip_head_text">#F5A623</color>
+
+    <color name="sdk_controller_bg_color">#99000000</color>
+    <color name="sdk_seekbar_progress_color">#FF6429</color>
+    <color name="sdk_seekbar_secondaryProgress_color">#B3B5B9</color>
+    <color name="sdk_seekbar_bg_color">#50656C73</color>
+
+    <!--角标的背景色-->
+    <color name="corner_mark_color">#F5A623</color>
+    <color name="corner_mark_color1">#7B00FD</color>
+    <color name="corner_mark_color2">#146BCD</color>
+    <color name="corner_mark_color3">#17B293</color>
+    <color name="corner_mark_color4">#CEB357</color>
+    <color name="corner_mark_color5">#FF7103</color>
+
+
+    <!--换肤颜色-->
+    <!--按钮的背景颜色，起始/结束颜色-->
+    <color name="skin_button_start">#F8CD4D</color>
+    <color name="skin_button_end">#F35817</color>
+    <color name="skin_button_def">#47AFAFAF</color>
+    <color name="skin_button_border">#FFFFFF</color>
+    <color name="skin_button_text_focus">#FFFFFF</color>
+    <color name="skin_button_text_selecte">#F8CD4D</color>
+
+    <!--主题字体颜色、建议背景是透明的都用这个颜色-->
+    <color name="theme_text">#FFFFFF</color>
+    <color name="second_level_title">#80FFFFFF</color>
+
+
+</resources>

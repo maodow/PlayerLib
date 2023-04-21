@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--图片选择-->
+    <declare-styleable name="SwitchImageView">
+        <attr name="def" format="reference" />
+        <attr name="sel" format="reference" />
+        <attr name="isFocus" format="boolean" />
+    </declare-styleable>
+
+    <!--EpisodeMarkView 选集角标-->
+    <declare-styleable name="SdkEpisodeMarkView">
+        <attr name="sdk_contentSize" format="dimension" />
+        <attr name="sdk_markMargin" format="dimension" />
+        <attr name="sdk_imageSize" format="dimension" />
+    </declare-styleable>
+</resources>

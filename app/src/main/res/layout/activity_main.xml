@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.huan.player.ui.view.HWPlayer
+        android:id="@+id/media_player"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_200" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/full_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skin_btn1"
+            android:focusable="true"
+            android:onClick="startQuan"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="全屏播放"
+            android:gravity="center"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/skin_text_selector3"/>
+
+        <View
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/start_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skin_btn1"
+            android:focusable="true"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:textSize="@dimen/sp_13"
+            android:onClick="startPlay"
+            android:text="activity 播放"
+            android:textColor="@color/skin_text_selector3"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

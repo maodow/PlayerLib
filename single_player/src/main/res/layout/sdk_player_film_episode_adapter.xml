@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="PlayerFilmEpisodeBinding">
+
+        <variable
+            name="media"
+            type="com.huan.player.bean.Media" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_221"
+        android:layout_height="@dimen/dp_65"
+        android:background="@drawable/sdk_player_film_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/dp_106"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/fresco_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/film_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1"
+                android:layout_marginEnd="@dimen/dp_1"
+                android:background="@drawable/sdk_film_tag_bg"
+                android:paddingLeft="@dimen/dp_1"
+                android:paddingRight="@dimen/dp_1"
+                android:text="正片"
+                android:textColor="@color/theme_text"
+                android:textSize="@dimen/sp_7"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/film_is_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@drawable/sdk_film_text_bg"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingTop="@dimen/dp_1"
+                android:paddingRight="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_1"
+                android:text="当前播放"
+                android:textColor="@color/theme_text"
+                android:textSize="@dimen/sp_7"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/film_play_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_1"
+                android:layout_marginBottom="@dimen/dp_1"
+                android:background="@drawable/sdk_film_text_bg"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_4"
+                android:textColor="@color/theme_text"
+                android:textSize="@dimen/sp_7"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_9"
+            android:ellipsize="marquee"
+            android:gravity="start"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            android:singleLine="true"
+            android:text="@{media.title}"
+            android:textColor="@color/theme_text"
+            android:textSize="@dimen/sp_9" />
+    </LinearLayout>
+</layout>
