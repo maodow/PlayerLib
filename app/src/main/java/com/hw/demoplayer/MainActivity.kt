@@ -1,17 +1,20 @@
 package com.hw.demoplayer
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.huan.player.constant.Utils
+import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.huan.player.ui.PlayerDataHelp
 import com.huan.player.ui.view.HWPlayer
-import com.hw.demoplayer.bean.ColumnJson
+import com.hw.demoplayer.bean.AuthRequestBean
 import com.hw.demoplayer.bean.DataJson
-import com.hw.demoplayer.bean.FilmJson
-import tv.huan.hwplayer.config.HWPlayerSettingOptions
-
+import com.hw.demoplayer.network.API
+import com.hw.demoplayer.network.AuthResponse
+import com.hw.demoplayer.network.DefaultObservers
+import com.hw.demoplayer.network.RetrofitUtil
+import okhttp3.MediaType
+import okhttp3.RequestBody
 
 class MainActivity : AppCompatActivity() {
 
@@ -72,7 +75,48 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer?.startPlayer()
     }
 
+    override fun onResume() {
+        super.onResume()
+        findViewById<View>(R.id.go_pay).setOnClickListener {
+            getAuth()
+        }
+    }
+
     fun startPlay(view: View) {
         startActivity(Intent(this, FullScreenActivity::class.java))
     }
+
+    fun goPay(view: View) {
+        startActivity(Intent(this, PayActivity::class.java))
+    }
+
+
+    fun getAuth() {
+        val gson = Gson()
+        val requestBean = AuthRequestBean()
+        requestBean.account = "5113304547B02"
+        requestBean.contentId = "HBGD7707453463196508165369336899"
+
+        val body = RequestBody.create(
+            MediaType.parse("application/json; charset=utf-8"),
+            gson.toJson(requestBean)
+        )
+
+        RetrofitUtil.hull(RetrofitUtil.createService(API::class.java).getAuth(body))
+            .subscribe(object : DefaultObservers<AuthResponse?>() {
+
+                override fun onResponse(data: AuthResponse?) {
+                    if (data?.data != null) {
+
+                    }
+                }
+
+                @Override
+                override fun onFailure(code: String?, msg: String?): Int {
+                    return super.onFailure(code, msg)
+                }
+
+            })
+    }
+
 }

@@ -6,23 +6,49 @@ plugins {
 
 android {
     compileSdk 31
-
     defaultConfig {
         applicationId "com.hw.demoplayer"
         minSdk 17
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'hubei123'
+            keyPassword 'hubei123'
+            storeFile file('../keystore/hubei_new_media.jks')
+            storePassword 'hubei123'
+        }
     }
 
     buildTypes {
         release {
+            buildConfigField 'String', 'BASE_URL', RELEASE_HOST
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            buildConfigField("boolean", "IS_DEBUG", "false")
+        }
+        debug {
+            buildConfigField 'String', 'BASE_URL', DEBUG_HOST
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            buildConfigField("boolean", "IS_DEBUG", "true")
         }
     }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all { output ->
+                outputFileName = "Hubei_new_media_v${variant.versionName}" + "_${variant.buildType.name}.apk"
+            }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -51,4 +77,19 @@ dependencies {
 
      api 'com.github.bumptech.glide:glide:4.13.0'
      kapt 'com.github.bumptech.glide:compiler:4.13.0'
+
+    api 'io.reactivex.rxjava2:rxjava:2.1.1'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    api 'com.squareup.okhttp3:okhttp:3.11.0'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    api files('libs/gson_encode.jar')
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle-kotlin:2.1.0'
+
+    implementation 'commons-codec:commons-codec:1.15'
+
 }

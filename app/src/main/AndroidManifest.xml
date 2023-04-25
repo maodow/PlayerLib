@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hw.demoplayer">
+    package="com.hw.demoplayer" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".App"
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,20 +17,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoPlayer"
-        tools:targetApi="31">
-        <activity
-            android:name=".FullScreenActivity"
-            android:theme="@style/SdkFullScreen"
-            android:exported="false" />
+        tools:targetApi="31" >
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".FullScreenActivity"
+            android:exported="false"
+            android:theme="@style/SdkFullScreen" />
+        <activity
+            android:name=".PayActivity"
+            android:exported="false"
+            android:theme="@style/SdkFullScreen" />
+
     </application>
 
 </manifest>
