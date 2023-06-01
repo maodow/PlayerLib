@@ -13,6 +13,7 @@ import com.hw.demoplayer.network.API
 import com.hw.demoplayer.network.AuthResponse
 import com.hw.demoplayer.network.DefaultObservers
 import com.hw.demoplayer.network.RetrofitUtil
+import com.hw.demoplayer.utils.LogUtil
 import okhttp3.MediaType
 import okhttp3.RequestBody
 
@@ -59,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         //playerDataHelp?.getNextEpisode(1)
     }
 
-
     fun startQuan(view: View) {
         mediaPlayer?.gotoScreenFullscreen()
         mediaPlayer?.startPlayer()
@@ -77,8 +77,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        getAuth() //用户鉴权
         findViewById<View>(R.id.go_pay).setOnClickListener {
-            getAuth()
+            startActivity(Intent(this, PayActivity::class.java))
         }
     }
 
@@ -95,8 +96,7 @@ class MainActivity : AppCompatActivity() {
         val gson = Gson()
         val requestBean = AuthRequestBean()
         requestBean.account = "5113304547B02"
-        requestBean.contentId = "HBGD7707453463196508165369336899"
-
+        requestBean.contentId = "HBGD7707453463196508165369336899" //测试用内容code：99180001000000010000000120648713
         val body = RequestBody.create(
             MediaType.parse("application/json; charset=utf-8"),
             gson.toJson(requestBean)
@@ -107,15 +107,15 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onResponse(data: AuthResponse?) {
                     if (data?.data != null) {
-
+                        LogUtil.d("Result ==> "+data.desc)
                     }
                 }
 
                 @Override
                 override fun onFailure(code: String?, msg: String?): Int {
+                    LogUtil.d("onFailure! ==> Code: $code, errorMsg: $msg")
                     return super.onFailure(code, msg)
                 }
-
             })
     }
 
