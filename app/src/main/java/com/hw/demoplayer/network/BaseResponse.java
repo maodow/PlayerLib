@@ -20,7 +20,4 @@ public class BaseResponse<T> implements Serializable {
     public String code;
     public String msg;
 
-    private boolean success;
-
-
 }

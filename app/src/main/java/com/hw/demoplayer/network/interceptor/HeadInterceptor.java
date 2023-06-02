@@ -24,7 +24,6 @@ public class HeadInterceptor implements Interceptor {
         builder.addHeader("Content-Type", "application/json;charset=UTF-8");
         builder.addHeader("Accept", "application/json");
         String token = AuthUtils.getInstance().makeToken(Constants.APP_KEY, builder.build().body().toString());
-        LogUtil.d("=== Token: "+token);
         builder.addHeader("Authorization", "HDCAUTH appid=\"" + Constants.APP_ID + "\",token=\"" + token + "\"");
         Request request = builder.build();
         return chain.proceed(request);

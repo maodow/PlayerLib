@@ -11,7 +11,7 @@ public class LogUtil {
     /**
      * 默认的文库日志Tag标签
      */
-    public final static String DEFAULT_TAG = "gylib";
+    public final static String DEFAULT_TAG = "OkHttp";
 
     /**
      * 此常量用于控制是否打日志到Logcat中

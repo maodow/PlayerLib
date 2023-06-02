@@ -87,6 +87,8 @@ public class PayActivity extends AppCompatActivity {
                     @Override
                     public int onFailure(String code, String msg) {
                         LogUtil.d("onFailure! ==> Code: " + code + ", errorMsg: " + msg);
+                        //test
+                        mWebView.loadUrl("https://cn.bing.com/?mkt=zh-CN");
                         return super.onFailure(code, msg);
                     }
                 });

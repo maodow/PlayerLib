@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        getAuth() //用户鉴权
+
         mediaPlayer = findViewById<HWPlayer>(R.id.media_player)
 
 
@@ -77,7 +79,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        getAuth() //用户鉴权
         findViewById<View>(R.id.go_pay).setOnClickListener {
             startActivity(Intent(this, PayActivity::class.java))
         }

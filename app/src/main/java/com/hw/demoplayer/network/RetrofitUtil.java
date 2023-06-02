@@ -23,7 +23,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
  */
 public class RetrofitUtil {
 
-    static final int DEFAULT_TIME_OUT = 15; //默认超时
+    static final int DEFAULT_TIME_OUT = 10; //默认超时
 
     private static String mBaseUrl;
 
